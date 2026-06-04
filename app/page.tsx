@@ -39,10 +39,11 @@ export default function Home() {
           <Testimonials />
         </ScrollReveal>
         
-        {/* 7. REMOÇÃO DE OBJEÇÃO: Elimina o "não tenho tempo" */}
+        {/* 7. REMOÇÃO DE OBJEÇÃO: Elimina o "não tenho tempo"
         <ScrollReveal animation="fade-up" delay={150}>
           <HomeService />
         </ScrollReveal>
+        */}
         
         {/* 8. AÇÃO: CTA final quando o visitante já está convencido */}
         <ScrollReveal animation="fade-up" delay={150}>

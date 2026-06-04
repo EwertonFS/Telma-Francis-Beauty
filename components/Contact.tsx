@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
   const whatsappUrl = "https://wa.me/5579999700631?text=Ol%C3%A1%2C%20Telma!%20Vi%20o%20site%20do%20Telma%20Francis%20Beauty%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
-  const mapsUrl = "https://www.google.com/maps/place/Inovar-Centro+De+Beleza/@-10.910071,-37.0991559,14z/data=!4m10!1m2!2m1!1sInovar-Centro+De+Beleza!3m6!1s0x71ab3df08cee75f:0x2c275c42fbbef416!8m2!3d-10.9371253!4d-37.0581357!15sChdJbm92YXItQ2VudHJvIERlIEJlbGV6YZIBDGJlYXV0eV9zYWxvbuABAA!16s%2Fg%2F11y3x2rq8d?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D";
-  const mapsEmbedUrl = "https://maps.google.com/maps?q=Inovar-Centro+De+Beleza,+-10.9371253,-37.0581357&z=17&output=embed";
+  const mapsUrl = "https://www.google.com/maps/place/Telma+Francis+Beauty/@-10.93712,-37.0607106,17z/data=!3m1!4b1!4m23!1m16!4m15!1m6!1m2!1s0x71ab3df08cee75f:0x2c275c42fbbef416!2sTelma+Francis+Beauty,+R.+Leopoldo+Mesquita,+46+-+Grageru,+Aracaju+-+SE,+49025-380!2m2!1d-37.0581357!2d-10.9371253!1m6!1m2!1s0x71ab3df08cee75f:0x2c275c42fbbef416!2sTelma+Francis+Beauty,+R.+Leopoldo+Mesquita,+46+-+Grageru,+Aracaju+-+SE,+49025-380!2m2!1d-37.0581357!2d-10.9371253!3e2!3m5!1s0x71ab3df08cee75f:0x2c275c42fbbef416!8m2!3d-10.9371253!4d-37.0581357!16s%2Fg%2F11y3x2rq8d?entry=ttu";
+  const mapsEmbedUrl = "https://maps.google.com/maps?q=Telma+Francis+Beauty,R.+Leopoldo+Mesquita,+46+-+Grageru,+Aracaju+-+SE&t=m&z=17&output=embed";
+  const [isMapActive, setIsMapActive] = useState(false);
 
   return (
     <section className="py-xl bg-black" id="contato">
@@ -26,7 +27,7 @@ export default function Contact() {
               </span>
               <div>
                 <p className="font-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Endereço</p>
-                <p className="font-body-md text-on-surface-variant mt-1 group-hover:underline">Bairro Grageru, Aracaju - SE</p>
+                <p className="font-body-md text-on-surface-variant mt-1 group-hover:underline">R. Leopoldo Mesquita, 46 - Grageru, Aracaju - SE</p>
               </div>
             </a>
 
@@ -90,7 +91,11 @@ export default function Contact() {
 
         {/* Right Column - Google Maps Embed */}
         <div className="relative w-full max-w-lg mx-auto md:mx-0">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20 bg-surface-container w-full aspect-[4/3]">
+          <div 
+            onClick={() => setIsMapActive(true)}
+            className={`relative rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20 bg-surface-container w-full aspect-[4/3] ${!isMapActive ? 'cursor-pointer group' : ''}`}
+          >
+            {/* Map Iframe */}
             <iframe
               src={mapsEmbedUrl}
               width="100%"
@@ -100,19 +105,42 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização do Innovar Centro de Beleza no Google Maps"
-              className="w-full h-full"
+              className={`w-full h-full transition-all duration-300 ${!isMapActive ? 'pointer-events-none blur-[2px] opacity-75' : ''}`}
             />
+            {/* Click to Activate Overlay */}
+            {!isMapActive && (
+              <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white gap-3 p-4 text-center transition-all duration-300 hover:bg-black/50">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined text-2xl text-primary animate-pulse select-none">
+                    map
+                  </span>
+                </div>
+                <div>
+                  <p className="font-body-md font-semibold text-white">Clique para ativar o mapa interativo</p>
+                  <p className="text-xs text-neutral-400 mt-1">Interaja com o mapa para ver a localização</p>
+                </div>
+              </div>
+            )}
           </div>
-          {/* Link para abrir no Maps */}
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 mt-3 text-primary hover:text-secondary transition-colors font-body-md text-sm group"
-          >
-            <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">open_in_new</span>
-            Ver no Google Maps
-          </a>
+          
+          {/* Link e indicação para abrir no Maps */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-3">
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-primary hover:text-secondary transition-colors font-body-md text-sm group"
+            >
+              <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">open_in_new</span>
+              Ver no Google Maps
+            </a>
+            {!isMapActive && (
+              <span className="text-xs text-on-surface-variant/75 flex items-center gap-1.5 select-none">
+                <span className="material-symbols-outlined text-sm text-primary">touch_app</span>
+                Clique no mapa para carregar a localização
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </section>

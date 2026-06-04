@@ -27,8 +27,21 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Telma Francis Beauty",
+  title: "Telma Francis Beauty | Salão de Beleza & Estética em Aracaju",
   description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Cabelos, unhas, depilação e serviço home service exclusivo.",
+  keywords: ["salão de beleza Aracaju", "estética Aracaju", "unhas de gel Aracaju", "corte de cabelo Aracaju", "visagismo Aracaju", "Telma Francis Beauty", "home service beleza Aracaju", "depilação Aracaju", "Grageru Aracaju"],
+  openGraph: {
+    title: "Telma Francis Beauty | Salão de Beleza & Estética em Aracaju",
+    description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Cabelos, unhas, depilação e serviço home service exclusivo.",
+    url: "https://telmafrancisbeauty.com.br",
+    siteName: "Telma Francis Beauty",
+    locale: "pt_BR",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
@@ -36,12 +49,55 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Telma Francis Beauty (Innovar Centro de Beleza)",
+    "alternateName": "Innovar Centro de Beleza",
+    "image": "https://telmafrancisbeauty.com.br/hero-bg.jpg",
+    "priceRange": "$$",
+    "telephone": "+5579999700631",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bairro Grageru",
+      "addressLocality": "Aracaju",
+      "addressRegion": "SE",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -10.9371253,
+      "longitude": -37.0581357
+    },
+    "url": "https://telmafrancisbeauty.com.br",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/telmafrancisbeauty/"
+    ]
+  };
+
   return (
     <html lang="pt-BR" className={`${playfair.variable} ${manrope.variable} ${greatVibes.variable} ${montserrat.variable} dark scroll-smooth`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300..400,0..1,0"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="font-body-md overflow-x-hidden bg-black text-[#e5e2e1]">

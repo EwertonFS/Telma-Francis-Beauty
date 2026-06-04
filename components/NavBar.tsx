@@ -20,7 +20,7 @@ export default function NavBar() {
     { name: "Serviços", href: "#servicos", id: "servicos" },
     { name: "Galeria", href: "#galeria", id: "galeria" },
     { name: "Depoimentos", href: "#depoimentos", id: "depoimentos" },
-    { name: "Serviços em Domicílio", href: "#servicosDomiciliares", id: "servicosDomiciliares" },
+    // { name: "Serviços em Domicílio", href: "#servicosDomiciliares", id: "servicosDomiciliares" },
     { name: "Contato", href: "#contato", id: "contato" },
   ];
 
