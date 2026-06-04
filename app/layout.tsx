@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/TelmaFrancisFavicon.webp",
   },
+  verification: {
+    google: "Cr6HlP64coR9XqCHcb9k7QCDVkoSvYVxt9mMGTXzjuY",
+  },
   openGraph: {
     title: "Telma Francis Beauty | Salão de Beleza & Estética em Aracaju",
     description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Cabelos, unhas, depilação e serviço home service exclusivo.",
