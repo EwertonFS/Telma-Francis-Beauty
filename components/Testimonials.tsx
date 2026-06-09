@@ -15,7 +15,7 @@ export default function Testimonials() {
       name: "Fernanda Lima",
       role: "Empresária",
       initials: "FL",
-      text: `"Uso o Home Service frequentemente e é um luxo total. A pontualidade e o profissionalismo me encantam. É como ter um spa de alta categoria na minha sala."`,
+      text: `"O atendimento no salão é maravilhoso e super privativo. A pontualidade e o profissionalismo me encantam. É como ter um spa de alta categoria à minha disposição."`,
     },
     {
       name: "Juliana Alves",

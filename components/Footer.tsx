@@ -83,11 +83,6 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#servicosDomiciliares">
-                Serviço a Domicílio
-              </a>
-            </li>
-            <li>
               <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#contato">
                 Nossa Localização
               </a>

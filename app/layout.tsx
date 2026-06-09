@@ -28,8 +28,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Telma Francis Beauty | Salão de Beleza & Estética em Aracaju",
-  description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Cabelos, unhas, depilação e serviço home service exclusivo.",
-  keywords: ["salão de beleza Aracaju", "estética Aracaju", "unhas de gel Aracaju", "corte de cabelo Aracaju", "visagismo Aracaju", "Telma Francis Beauty", "home service beleza Aracaju", "depilação Aracaju", "Grageru Aracaju"],
+  description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Referência em cabelos, unhas e depilação.",
+  keywords: ["salão de beleza Aracaju", "estética Aracaju", "unhas de gel Aracaju", "corte de cabelo Aracaju", "visagismo Aracaju", "Telma Francis Beauty", "depilação Aracaju", "Grageru Aracaju"],
   icons: {
     icon: "/TelmaFrancisFavicon.webp",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Telma Francis Beauty | Salão de Beleza & Estética em Aracaju",
-    description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Cabelos, unhas, depilação e serviço home service exclusivo.",
+    description: "Transformando a beleza através de 15 anos de maestria e inovação estética no coração de Aracaju. Referência em cabelos, unhas e depilação.",
     url: "https://telmafrancisbeauty.com.br",
     siteName: "Telma Francis Beauty",
     locale: "pt_BR",

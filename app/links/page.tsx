@@ -32,13 +32,6 @@ export default function LinksPage() {
       isPrimary: false,
     },
     {
-      title: "Serviço a Domicílio",
-      subtitle: "O luxo do salão no conforto do seu lar",
-      href: "/#servicosDomiciliares",
-      icon: "home",
-      isPrimary: false,
-    },
-    {
       title: "Conhecer Serviços",
       subtitle: "Cabelos, unhas, depilação e mais",
       href: "/#servicos",
